@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SewaKomikController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('tambah-data', [SewaKomikController::class, 'tambah_data']);
+Route::get('show-data', [SewaKomikController::class, 'show_data']);
+Route::post('edit-data', [SewaKomikController::class, 'edit_data']);
+Route::post('delete-data', [SewaKomikController::class, 'delete_data']);
